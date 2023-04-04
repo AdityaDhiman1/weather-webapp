@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <title>Weather</title>
+    
+</head>
+<body>
+    
+    {{!-- {{#each data}}
+    {{this}}
+    {{/each}} --}}
+    <div class="container">
+        <div class="card">
+            <div class="icon"><i class="fa-regular fa-sun"></i></div>
+
+                <div class="weather">
+                    <h3>{{tempr}}<sup>&deg;</sup>C</h3>
+                </div>
+                <div class="temp">
+                    <h3>Max {{max}}<sup>&deg;</sup>C</h3>
+                    <h3>Min {{min}}<sup>&deg;</sup>C</h3>
+                </div>
+                <div class="weather">
+                    <label for="" class="con-tent">{{name}} <span>|</span></label>
+                <label for="" class="con-tent" id="date"><span>|</span></label>
+                <label for="" class="con-tent" id="time"><span>|</span></label>
+                </div>
+        </div>
+    </div>
+
+    <script>
+        let time = new Date()
+        let day = time.getDay();
+        let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        console.log(days[day]);
+        document.getElementById('date').innerText=days[day];
+        setInterval(() => {
+            time = new Date();
+            document.getElementById('time').innerText=time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+        }, 1000);
+    </script>
+</body>
+</html>
